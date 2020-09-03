@@ -21,6 +21,7 @@ public class cryptanalystMonoalphabetic {
     };
     
     public cryptanalystMonoalphabetic(String ciphertext) {
+        //update with actual standard frequency
         this(ciphertext, new int[]{5, 17, 26, 3}); 
     };
     
