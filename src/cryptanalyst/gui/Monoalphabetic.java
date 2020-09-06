@@ -9,18 +9,18 @@ package cryptanalyst.gui;
  *
  * @author Ian
  */
-public class cryptanalysisMonoalphabetic {
+public class Monoalphabetic {
     private String cipherText;
     private int[] letterFrequency;
     private char[] plainTextMapping;
     private char[] cipherTextMapping;
     
-    public cryptanalysisMonoalphabetic(String ciphertext, int[] freqency) {
+    public Monoalphabetic(String ciphertext, int[] freqency) {
         this.cipherText = ciphertext;
         this.letterFrequency = freqency;
     };
     
-    public cryptanalysisMonoalphabetic(String ciphertext) {
+    public Monoalphabetic(String ciphertext) {
         //from https://www3.nd.edu/~busiforc/handouts/cryptography/letterfrequencies.html
         //freqencies are relative number in 1000.
         this(ciphertext, 
@@ -43,9 +43,13 @@ public class cryptanalysisMonoalphabetic {
             charCount++;
         }
         
-        for (int i : newFreq) {
-            i = (i*1000)/charCount;
+        for (int i = 0; i < 26; i++) {
+            newFreq[i] = (newFreq[i]*1000)/charCount;            
         }
         this.letterFrequency = newFreq;
+    };
+    
+    public int[] getFrequency() {
+        return this.letterFrequency;
     }
 }
