@@ -18,7 +18,7 @@ public class MonoalphabeticTests{
     @Test
     public void testLetterFreqency() {
         Monoalphabetic uut = new Monoalphabetic("THIS IS A TEST");
-        int[] freq = uut.getFrequency();
+        int[] freq = uut.getCalibratedFrequency();
         int[] exp = new int[]{84, 21, 45, 34, 112, 18, 25, 30, 75, 2, 11, 55,
             30, 67, 72, 32, 2, 76, 57, 70, 36, 10, 13, 3, 18, 3};
         Assert.assertArrayEquals(exp , freq);
@@ -184,8 +184,8 @@ public class MonoalphabeticTests{
 "But all the descendants of Israel\n" +
 "    will find deliverance in the Lord\n" +
 "    and will make their boast in him.";
-        uut.setFrequency(teststr);
-        int[] freq = uut.getFrequency();
+        uut.setCalibratedFrequency(teststr);
+        int[] freq = uut.getCalibratedFrequency();
         int[] exp = new int[]{74, 17, 16, 46, 119, 16, 22, 68, 65, 0, 8, 43, 26,
             57, 94, 10, 0, 63, 65, 94, 25, 11, 25, 0, 25, 0};
         Assert.assertArrayEquals(exp , freq);
