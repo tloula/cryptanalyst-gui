@@ -70,7 +70,24 @@ public class Monoalphabetic {
     
     public char[] convertMap(char[] initMap) {
         //converts a map of plain -> cipher to a cipher -> plain map and inverse
-        return new char[] {'A'};
+        //this is accomplished using a mirrored sort
+        char[] newMap = new char[] {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+        
+        //sort initMap from least to greatest, mirroring moves
+        //used insertion sort
+        for (int i = 0; i < initMap.length; i++) {
+            char initMapKey = initMap[i];
+            char newMapKey = newMap[i];
+            int j = i-1;
+            while (j >= 0 && initMap[i] > initMapKey) {
+                initMap[j+1] = initMap[j];
+                newMap[j+1] = newMap[j];
+                j--;
+            }
+            initMap[j+1] = initMapKey;
+            newMap[j+1] = newMapKey;
+        }        
+        return newMap;
     }
     
     public String Decode() {
@@ -83,7 +100,7 @@ public class Monoalphabetic {
         this.cipherTextMapping = new char[] {'A', 'B', 'C'};
     }
     
-    private int[] getCiphertextFrequency() {
+    public int[] getCiphertextFrequency() {
         //returns
         // value: int freq in 1000 char
         // index: ciphertext letter -> {a, b, c, ...}
