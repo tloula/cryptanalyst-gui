@@ -19,6 +19,8 @@ public class Monoalphabetic {
         //use custom frequencies
         this.cipherText = ciphertext;
         this.letterFrequency = freqency;
+        this.plainTextMapping = new char[] {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+        this.cipherTextMapping = new char[] {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
     };
     
     public Monoalphabetic(String ciphertext) {
@@ -62,12 +64,6 @@ public class Monoalphabetic {
         return this.cipherTextMapping;
     }
     
-    private void makePlainTextMapping() {
-        // CIPHER {A M Q F G ...}
-        // PLAIN  {A B C D E ...}
-        this.plainTextMapping = new char[] {'A', 'B', 'C'};
-    }
-    
     public char[] convertMap(char[] initMap) {
         //converts a map of plain -> cipher to a cipher -> plain map and inverse
         //this is accomplished using a mirrored sort
@@ -91,7 +87,18 @@ public class Monoalphabetic {
     }
     
     public String Decode() {
-        return "Plaintext using current map";
+        String plaintext = "";
+        String ciphertext = this.cipherText.toUpperCase();
+        for (int i = 0;  i < this.cipherText.length(); i++) {
+            char currChar = ciphertext.charAt(i);
+            int charVal = currChar - 0x41;
+            if (charVal < 0 || charVal >= 26) {
+                plaintext += this.cipherTextMapping[charVal];
+            } else {
+                plaintext += currChar;
+            }
+        }
+        return plaintext;
     }
     
     private void initialMap() {
