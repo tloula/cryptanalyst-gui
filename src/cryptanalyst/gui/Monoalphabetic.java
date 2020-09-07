@@ -30,6 +30,7 @@ public class Monoalphabetic {
                           67, 72, 32, 2, 76, 57, 70, 36, 10, 13, 3, 18, 3}); 
     };
     
+
     public void setCalibratedFrequency(String calibration) {
         this.letterFrequency = calcFrequency(calibration);
     };
