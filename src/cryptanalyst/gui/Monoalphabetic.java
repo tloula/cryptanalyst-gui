@@ -19,8 +19,7 @@ public class Monoalphabetic {
         //use custom frequencies
         this.cipherText = ciphertext;
         this.letterFrequency = freqency;
-        this.plainTextMapping = new char[] {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-        this.cipherTextMapping = new char[] {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+        this.initialMap();
     };
     
     public Monoalphabetic(String ciphertext) {
@@ -103,8 +102,60 @@ public class Monoalphabetic {
     
     private void initialMap() {
         //generate an initial mapping base on frequencies
-        this.plainTextMapping = new char[] {'A', 'B', 'C'};
-        this.cipherTextMapping = new char[] {'A', 'B', 'C'};
+        //sort ciphertext frequencies
+        char[] cipherMap = new char[] {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+            'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+            'W', 'X', 'Y', 'Z'};
+        int[] cipherFreq = getCiphertextFrequency();
+        //sort cipherFreq from least to greatest, mirroring moves
+        //used insertion sort
+        for (int i = 0; i < cipherFreq.length; i++) {
+            int cipherFreqKey = cipherFreq[i];
+            char cipherMapKey = cipherMap[i];
+            int j = i-1;
+            while (j >= 0 && cipherFreq[i] > cipherFreqKey) {
+                cipherFreq[j+1] = cipherFreq[j];
+                cipherMap[j+1] = cipherMap[j];
+                j--;
+            }
+            cipherFreq[j+1] = cipherFreqKey;
+            cipherMap[j+1] = cipherMapKey;
+        }
+        
+        char[] plainMap = new char[] {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+            'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+            'W', 'X', 'Y', 'Z'};
+        int[] plainFreq = getCalibratedFrequency();
+        //sort plainFreq from least to greatest, mirroring moves
+        //used insertion sort
+        for (int i = 0; i < plainFreq.length; i++) {
+            int plainFreqKey = plainFreq[i];
+            char plainMapKey = plainMap[i];
+            int j = i-1;
+            while (j >= 0 && plainFreq[i] > plainFreqKey) {
+                plainFreq[j+1] = plainFreq[j];
+                plainMap[j+1] = plainMap[j];
+                j--;
+            }
+            plainFreq[j+1] = plainFreqKey;
+            plainMap[j+1] = plainMapKey;
+        }
+        
+        //generate a plaintext map by sorting the two maps together on the plaintext map
+        for (int i = 0; i < plainMap.length; i++) {
+            char plainMapKey = plainMap[i];
+            char cipherMapKey = cipherMap[i];
+            int j = i-1;
+            while (j >= 0 && plainMap[i] > plainMapKey) {
+                plainMap[j+1] = plainMap[j];
+                cipherMap[j+1] = cipherMap[j];
+                j--;
+            }
+            plainMap[j+1] = plainMapKey;
+            cipherMap[j+1] = cipherMapKey;
+        }
+        this.plainTextMapping = cipherMap;
+        this.cipherTextMapping = convertMap(cipherMap);
     }
     
     public int[] getCiphertextFrequency() {
