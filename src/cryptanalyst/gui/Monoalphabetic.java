@@ -37,7 +37,7 @@ public class Monoalphabetic {
     };
     
     public int[] getCalibratedFrequency() {
-        return this.letterFrequency;
+        return this.letterFrequency.clone();
     }
     
     public void setPlaintextMapping(char[] map) {
@@ -51,7 +51,7 @@ public class Monoalphabetic {
         // Cipher A = Plain M
         // PLAIN   {A M Q F G ...}
         // CIPHER  {A B C D E ...}
-        return this.cipherTextMapping;
+        return this.cipherTextMapping.clone();
     }
     
     //USE THIS ONE ON GRAPH
@@ -60,7 +60,7 @@ public class Monoalphabetic {
         // Plain A = Cipher M
         // CIPHER {A M Q F G ...}
         // PLAIN  {A B C D E ...}
-        return this.cipherTextMapping;
+        return this.plainTextMapping.clone();
     }
     
     public char[] convertMap(char[] initMap) {
@@ -74,7 +74,7 @@ public class Monoalphabetic {
             char initMapKey = initMap[i];
             char newMapKey = newMap[i];
             int j = i-1;
-            while (j >= 0 && initMap[i] > initMapKey) {
+            while (j >= 0 && initMap[j] > initMapKey) {
                 initMap[j+1] = initMap[j];
                 newMap[j+1] = newMap[j];
                 j--;
@@ -91,7 +91,7 @@ public class Monoalphabetic {
         for (int i = 0;  i < this.cipherText.length(); i++) {
             char currChar = ciphertext.charAt(i);
             int charVal = currChar - 0x41;
-            if (charVal < 0 || charVal >= 26) {
+            if (charVal >= 0 && charVal < 26) {
                 plaintext += this.cipherTextMapping[charVal];
             } else {
                 plaintext += currChar;
@@ -100,7 +100,7 @@ public class Monoalphabetic {
         return plaintext;
     }
     
-    private void initialMap() {
+    public void initialMap() {
         //generate an initial mapping base on frequencies
         //sort ciphertext frequencies
         char[] cipherMap = new char[] {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
@@ -113,7 +113,7 @@ public class Monoalphabetic {
             int cipherFreqKey = cipherFreq[i];
             char cipherMapKey = cipherMap[i];
             int j = i-1;
-            while (j >= 0 && cipherFreq[i] > cipherFreqKey) {
+            while (j >= 0 && cipherFreq[j] > cipherFreqKey) {
                 cipherFreq[j+1] = cipherFreq[j];
                 cipherMap[j+1] = cipherMap[j];
                 j--;
@@ -132,7 +132,7 @@ public class Monoalphabetic {
             int plainFreqKey = plainFreq[i];
             char plainMapKey = plainMap[i];
             int j = i-1;
-            while (j >= 0 && plainFreq[i] > plainFreqKey) {
+            while (j >= 0 && plainFreq[j] > plainFreqKey) {
                 plainFreq[j+1] = plainFreq[j];
                 plainMap[j+1] = plainMap[j];
                 j--;
@@ -146,7 +146,7 @@ public class Monoalphabetic {
             char plainMapKey = plainMap[i];
             char cipherMapKey = cipherMap[i];
             int j = i-1;
-            while (j >= 0 && plainMap[i] > plainMapKey) {
+            while (j >= 0 && plainMap[j] > plainMapKey) {
                 plainMap[j+1] = plainMap[j];
                 cipherMap[j+1] = cipherMap[j];
                 j--;
@@ -155,7 +155,7 @@ public class Monoalphabetic {
             cipherMap[j+1] = cipherMapKey;
         }
         this.plainTextMapping = cipherMap;
-        this.cipherTextMapping = convertMap(cipherMap);
+        this.cipherTextMapping = convertMap(cipherMap.clone());
     }
     
     public int[] getCiphertextFrequency() {
