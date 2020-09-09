@@ -28,7 +28,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
     
     public void update() {
         cipher.setPlaintextMapping(this.map);
-        cipher.Decode();
+        PlaintextTextArea.setText(cipher.Decode());
     }
     
     public void setMappings() {
@@ -249,6 +249,16 @@ public class cryptanalystGui extends javax.swing.JFrame {
         A_Combo.setBackground(new java.awt.Color(107, 110, 112));
         A_Combo.setEditable(true);
         A_Combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" }));
+        A_Combo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                A_ComboItemStateChanged(evt);
+            }
+        });
+        A_Combo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                A_ComboMouseExited(evt);
+            }
+        });
         A_Combo.addInputMethodListener(new java.awt.event.InputMethodListener() {
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
@@ -1459,7 +1469,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
     }//GEN-LAST:event_B_ComboActionPerformed
 
     private void A_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A_ComboActionPerformed
-        map[0] = A_Combo.getSelectedItem().toString().charAt(0);
+        char tmp = A_Combo.getSelectedItem().toString().charAt(0);
+        map[0] = tmp;
         this.update();
     }//GEN-LAST:event_A_ComboActionPerformed
 
@@ -1605,6 +1616,14 @@ public class cryptanalystGui extends javax.swing.JFrame {
     private void A_ComboInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_A_ComboInputMethodTextChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_A_ComboInputMethodTextChanged
+
+    private void A_ComboItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_A_ComboItemStateChanged
+
+    }//GEN-LAST:event_A_ComboItemStateChanged
+
+    private void A_ComboMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_A_ComboMouseExited
+
+    }//GEN-LAST:event_A_ComboMouseExited
 
     /**
      * @param args the command line arguments
