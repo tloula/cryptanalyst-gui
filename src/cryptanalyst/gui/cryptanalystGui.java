@@ -37,6 +37,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
         System.out.println(cipher.getCipherTextMapping());
         System.out.println(cipher.Decode());
         PlaintextTextArea.setText(cipher.Decode());
+        this.setFrequencies();
     }
     
     public void setMappings() {
@@ -98,6 +99,38 @@ public class cryptanalystGui extends javax.swing.JFrame {
         temp[25] = Z_Combo.getSelectedItem().toString().charAt(0);
         return temp;
     }
+    
+    public void setFrequencies() {
+        int[] ciph = cipher.getCiphertextFrequency();
+        int[] cali = cipher.getCalibratedFrequency();
+        
+        A_Frequency.setText(Integer.toString(ciph[0]) + "/" + Integer.toString(cali[0]));
+        B_Frequency.setText(Integer.toString(ciph[1]) + "/" + Integer.toString(cali[1]));
+        C_Frequency.setText(Integer.toString(ciph[2]) + "/" + Integer.toString(cali[2]));
+        D_Frequency.setText(Integer.toString(ciph[3]) + "/" + Integer.toString(cali[3]));
+        E_Frequency.setText(Integer.toString(ciph[4]) + "/" + Integer.toString(cali[4]));
+        F_Frequency.setText(Integer.toString(ciph[5]) + "/" + Integer.toString(cali[5]));
+        G_Frequency.setText(Integer.toString(ciph[6]) + "/" + Integer.toString(cali[6]));
+        H_Frequency.setText(Integer.toString(ciph[7]) + "/" + Integer.toString(cali[7]));
+        I_Frequency.setText(Integer.toString(ciph[8]) + "/" + Integer.toString(cali[8]));
+        J_Frequency.setText(Integer.toString(ciph[9]) + "/" + Integer.toString(cali[9]));
+        K_Frequency.setText(Integer.toString(ciph[10]) + "/" + Integer.toString(cali[10]));
+        L_Frequency.setText(Integer.toString(ciph[11]) + "/" + Integer.toString(cali[11]));
+        M_Frequency.setText(Integer.toString(ciph[12]) + "/" + Integer.toString(cali[12]));
+        N_Frequency.setText(Integer.toString(ciph[13]) + "/" + Integer.toString(cali[13]));
+        O_Frequency.setText(Integer.toString(ciph[14]) + "/" + Integer.toString(cali[14]));
+        P_Frequency.setText(Integer.toString(ciph[15]) + "/" + Integer.toString(cali[15]));
+        Q_Frequency.setText(Integer.toString(ciph[16]) + "/" + Integer.toString(cali[16]));
+        R_Frequency.setText(Integer.toString(ciph[17]) + "/" + Integer.toString(cali[17]));
+        S_Frequency.setText(Integer.toString(ciph[18]) + "/" + Integer.toString(cali[18]));
+        T_Frequency.setText(Integer.toString(ciph[19]) + "/" + Integer.toString(cali[19]));
+        U_Frequency.setText(Integer.toString(ciph[20]) + "/" + Integer.toString(cali[20]));
+        V_Frequency.setText(Integer.toString(ciph[21]) + "/" + Integer.toString(cali[21]));
+        W_Frequency.setText(Integer.toString(ciph[22]) + "/" + Integer.toString(cali[22]));
+        X_Frequency.setText(Integer.toString(ciph[23]) + "/" + Integer.toString(cali[23]));
+        Y_Frequency.setText(Integer.toString(ciph[24]) + "/" + Integer.toString(cali[24]));
+        Z_Frequency.setText(Integer.toString(ciph[25]) + "/" + Integer.toString(cali[25]));
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -121,83 +154,109 @@ public class cryptanalystGui extends javax.swing.JFrame {
         LetterMappingPanelAM = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         A_Combo = new javax.swing.JComboBox<>();
-        jLabel17 = new javax.swing.JLabel();
+        A_Frequency = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         B_Combo = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
+        B_Frequency = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         C_Combo = new javax.swing.JComboBox<>();
         jLabel43 = new javax.swing.JLabel();
+        C_Frequency = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         D_Combo = new javax.swing.JComboBox<>();
         jLabel44 = new javax.swing.JLabel();
+        D_Frequency = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         E_Combo = new javax.swing.JComboBox<>();
-        jLabel45 = new javax.swing.JLabel();
+        E_Frequency = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         F_Combo = new javax.swing.JComboBox<>();
         jLabel46 = new javax.swing.JLabel();
+        F_Frequency = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         G_Combo = new javax.swing.JComboBox<>();
         jLabel47 = new javax.swing.JLabel();
+        G_Frequency = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         H_Combo = new javax.swing.JComboBox<>();
         jLabel48 = new javax.swing.JLabel();
+        H_Frequency = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         I_Combo = new javax.swing.JComboBox<>();
         jLabel49 = new javax.swing.JLabel();
+        I_Frequency = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         J_Combo = new javax.swing.JComboBox<>();
         jLabel50 = new javax.swing.JLabel();
+        J_Frequency = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         L_Combo = new javax.swing.JComboBox<>();
         jLabel51 = new javax.swing.JLabel();
+        L_Frequency = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         K_Combo = new javax.swing.JComboBox<>();
         jLabel52 = new javax.swing.JLabel();
+        K_Frequency = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         M_Combo = new javax.swing.JComboBox<>();
         jLabel53 = new javax.swing.JLabel();
+        M_Frequency = new javax.swing.JLabel();
         LetterMappingPanelMZ = new javax.swing.JPanel();
         jPanel14 = new javax.swing.JPanel();
         N_Combo = new javax.swing.JComboBox<>();
         jLabel19 = new javax.swing.JLabel();
+        N_Frequency = new javax.swing.JLabel();
         jPanel15 = new javax.swing.JPanel();
         O_Combo = new javax.swing.JComboBox<>();
-        jLabel20 = new javax.swing.JLabel();
+        O_Frequency = new javax.swing.JLabel();
+        O_Label = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
         P_Combo = new javax.swing.JComboBox<>();
         jLabel54 = new javax.swing.JLabel();
+        P_Frequency = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
         Q_Combo = new javax.swing.JComboBox<>();
         jLabel55 = new javax.swing.JLabel();
+        Q_Frequency = new javax.swing.JLabel();
         jPanel18 = new javax.swing.JPanel();
         R_Combo = new javax.swing.JComboBox<>();
         jLabel56 = new javax.swing.JLabel();
+        R_Frequency = new javax.swing.JLabel();
         jPanel19 = new javax.swing.JPanel();
         S_Combo = new javax.swing.JComboBox<>();
-        jLabel57 = new javax.swing.JLabel();
+        S_Frequency = new javax.swing.JLabel();
+        S_Label = new javax.swing.JLabel();
         jPanel20 = new javax.swing.JPanel();
         T_Combo = new javax.swing.JComboBox<>();
-        jLabel58 = new javax.swing.JLabel();
+        T_Frequency = new javax.swing.JLabel();
+        T_Label = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
         U_Combo = new javax.swing.JComboBox<>();
-        jLabel59 = new javax.swing.JLabel();
+        U_Frequency = new javax.swing.JLabel();
+        U_Label = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
         V_Combo = new javax.swing.JComboBox<>();
         jLabel60 = new javax.swing.JLabel();
+        V_Frequency = new javax.swing.JLabel();
         jPanel23 = new javax.swing.JPanel();
         W_Combo = new javax.swing.JComboBox<>();
         jLabel61 = new javax.swing.JLabel();
+        W_Frequency = new javax.swing.JLabel();
         jPanel24 = new javax.swing.JPanel();
         Y_Combo = new javax.swing.JComboBox<>();
         jLabel62 = new javax.swing.JLabel();
+        Y_Frequency = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
         X_Combo = new javax.swing.JComboBox<>();
         jLabel63 = new javax.swing.JLabel();
+        X_Frequency = new javax.swing.JLabel();
         jPanel26 = new javax.swing.JPanel();
         Z_Combo = new javax.swing.JComboBox<>();
         jLabel64 = new javax.swing.JLabel();
+        Z_Frequency = new javax.swing.JLabel();
         PlaintextScrollPane = new javax.swing.JScrollPane();
         PlaintextTextArea = new javax.swing.JTextArea();
         CiphertextScrollPane = new javax.swing.JScrollPane();
@@ -289,7 +348,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        LetterMappingPanelAM.setBackground(new java.awt.Color(39, 39, 39));
+        LetterMappingPanelAM.setBackground(new java.awt.Color(123, 70, 70));
 
         jPanel1.setBackground(new java.awt.Color(34, 38, 41));
 
@@ -319,10 +378,15 @@ public class cryptanalystGui extends javax.swing.JFrame {
             }
         });
 
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("A");
+        A_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        A_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        A_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        A_Frequency.setText("A");
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel21.setText("A");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -330,10 +394,12 @@ public class cryptanalystGui extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(A_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(A_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(A_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -341,7 +407,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(A_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17))
+                    .addComponent(A_Frequency)
+                    .addComponent(jLabel21))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -362,16 +429,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("B");
 
+        B_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        B_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        B_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        B_Frequency.setText("B");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(B_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(B_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(B_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -379,7 +453,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(B_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel18))
+                    .addComponent(jLabel18)
+                    .addComponent(B_Frequency))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -400,16 +475,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel43.setText("C");
 
+        C_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        C_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        C_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        C_Frequency.setText("C");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(C_Combo, 0, 71, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(C_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(C_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -417,7 +499,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43)
-                    .addComponent(C_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(C_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(C_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -438,16 +521,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel44.setText("D");
 
+        D_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        D_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        D_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        D_Frequency.setText("D");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(D_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(D_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(D_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -455,7 +545,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel44)
-                    .addComponent(D_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(D_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(D_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -471,10 +562,15 @@ public class cryptanalystGui extends javax.swing.JFrame {
             }
         });
 
-        jLabel45.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel45.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel45.setText("E");
+        E_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        E_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        E_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        E_Frequency.setText("E");
+
+        jLabel65.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel65.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel65.setText("E");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -482,18 +578,21 @@ public class cryptanalystGui extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(E_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(E_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(E_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel45)
-                    .addComponent(E_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(E_Frequency)
+                    .addComponent(E_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel65))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -514,16 +613,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel46.setText("F");
 
+        F_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        F_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        F_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        F_Frequency.setText("F");
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(F_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(F_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(F_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -531,7 +637,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel46)
-                    .addComponent(F_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(F_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(F_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -552,16 +659,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel47.setText("G");
 
+        G_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        G_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        G_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        G_Frequency.setText("G");
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(G_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(G_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(G_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -569,7 +683,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel47)
-                    .addComponent(G_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(G_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(G_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -590,16 +705,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel48.setText("H");
 
+        H_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        H_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        H_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        H_Frequency.setText("H");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(H_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(H_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(H_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -607,7 +729,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel48)
-                    .addComponent(H_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(H_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(H_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -628,16 +751,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel49.setText("I");
 
+        I_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        I_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        I_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        I_Frequency.setText("I");
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel49, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(I_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(I_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(I_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -645,7 +775,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49)
-                    .addComponent(I_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(I_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(I_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -666,16 +797,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel50.setText("J");
 
+        J_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        J_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        J_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        J_Frequency.setText("J");
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(J_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(J_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(J_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -683,7 +821,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel50)
-                    .addComponent(J_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(J_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(J_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -704,16 +843,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel51.setText("L");
 
+        L_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        L_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        L_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        L_Frequency.setText("L");
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(L_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(L_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(L_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -721,7 +867,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel51)
-                    .addComponent(L_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(L_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(L_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -742,16 +889,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel52.setText("K");
 
+        K_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        K_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        K_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        K_Frequency.setText("K");
+
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(K_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(K_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(K_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -759,7 +913,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel52)
-                    .addComponent(K_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(K_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(K_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -780,16 +935,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel53.setText("M");
 
+        M_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        M_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        M_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        M_Frequency.setText("M");
+
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(M_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(M_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(M_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -797,7 +959,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel53)
-                    .addComponent(M_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(M_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(M_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -808,12 +971,6 @@ public class cryptanalystGui extends javax.swing.JFrame {
             .addGroup(LetterMappingPanelAMLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(LetterMappingPanelAMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LetterMappingPanelAMLayout.createSequentialGroup()
-                        .addGroup(LetterMappingPanelAMLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -823,7 +980,10 @@ public class cryptanalystGui extends javax.swing.JFrame {
                     .addComponent(jPanel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         LetterMappingPanelAMLayout.setVerticalGroup(
@@ -858,7 +1018,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        LetterMappingPanelMZ.setBackground(new java.awt.Color(39, 39, 39));
+        LetterMappingPanelMZ.setBackground(new java.awt.Color(123, 70, 70));
 
         jPanel14.setBackground(new java.awt.Color(34, 38, 41));
 
@@ -877,16 +1037,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("N");
 
+        N_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        N_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        N_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        N_Frequency.setText("N");
+
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(N_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(N_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(N_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -894,7 +1061,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(N_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19))
+                    .addComponent(jLabel19)
+                    .addComponent(N_Frequency))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -910,10 +1078,15 @@ public class cryptanalystGui extends javax.swing.JFrame {
             }
         });
 
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel20.setText("O");
+        O_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        O_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        O_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        O_Frequency.setText("O");
+
+        O_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        O_Label.setForeground(new java.awt.Color(255, 255, 255));
+        O_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        O_Label.setText("O");
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -921,10 +1094,12 @@ public class cryptanalystGui extends javax.swing.JFrame {
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(O_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(O_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(O_Combo, 0, 71, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(O_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -932,7 +1107,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(O_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20))
+                    .addComponent(O_Frequency)
+                    .addComponent(O_Label))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -953,16 +1129,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel54.setText("P");
 
+        P_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        P_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        P_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        P_Frequency.setText("P");
+
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(P_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79))
+                .addComponent(P_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(P_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -970,7 +1153,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel54)
-                    .addComponent(P_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(P_Combo)
+                    .addComponent(P_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -991,16 +1175,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel55.setText("Q");
 
+        Q_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Q_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        Q_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Q_Frequency.setText("Q");
+
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Q_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(Q_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Q_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1008,7 +1199,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel55)
-                    .addComponent(Q_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Q_Combo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Q_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -1029,16 +1221,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel56.setText("R");
 
+        R_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        R_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        R_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        R_Frequency.setText("R");
+
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(R_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(R_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(R_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1046,7 +1245,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel56)
-                    .addComponent(R_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(R_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(R_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -1062,10 +1262,15 @@ public class cryptanalystGui extends javax.swing.JFrame {
             }
         });
 
-        jLabel57.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel57.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel57.setText("S");
+        S_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        S_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        S_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        S_Frequency.setText("S");
+
+        S_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        S_Label.setForeground(new java.awt.Color(255, 255, 255));
+        S_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        S_Label.setText("S");
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -1073,19 +1278,27 @@ public class cryptanalystGui extends javax.swing.JFrame {
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(S_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(S_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(S_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(S_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel57)
-                    .addComponent(S_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(S_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(S_Frequency))
+                        .addGap(0, 4, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(S_Label)))
+                .addContainerGap())
         );
 
         jPanel20.setBackground(new java.awt.Color(34, 38, 41));
@@ -1100,10 +1313,15 @@ public class cryptanalystGui extends javax.swing.JFrame {
             }
         });
 
-        jLabel58.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel58.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel58.setText("T");
+        T_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        T_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        T_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        T_Frequency.setText("T");
+
+        T_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        T_Label.setForeground(new java.awt.Color(255, 255, 255));
+        T_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        T_Label.setText("T");
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -1111,18 +1329,21 @@ public class cryptanalystGui extends javax.swing.JFrame {
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(T_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(T_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(T_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(T_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel58)
-                    .addComponent(T_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(T_Frequency)
+                    .addComponent(T_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(T_Label))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -1138,10 +1359,15 @@ public class cryptanalystGui extends javax.swing.JFrame {
             }
         });
 
-        jLabel59.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel59.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel59.setText("U");
+        U_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        U_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        U_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        U_Frequency.setText("U");
+
+        U_Label.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        U_Label.setForeground(new java.awt.Color(255, 255, 255));
+        U_Label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        U_Label.setText("U");
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -1149,18 +1375,21 @@ public class cryptanalystGui extends javax.swing.JFrame {
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(U_Label, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(U_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(U_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(U_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel21Layout.setVerticalGroup(
             jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel21Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel59)
-                    .addComponent(U_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(U_Frequency)
+                    .addComponent(U_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(U_Label))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -1181,16 +1410,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel60.setText("V");
 
+        V_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        V_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        V_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        V_Frequency.setText("V");
+
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
         jPanel22Layout.setHorizontalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(V_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(V_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(V_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1198,7 +1434,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel60)
-                    .addComponent(V_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(V_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(V_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -1219,16 +1456,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel61.setText("W");
 
+        W_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        W_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        W_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        W_Frequency.setText("W");
+
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(W_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(W_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(W_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1236,7 +1480,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel61)
-                    .addComponent(W_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(W_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(W_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -1257,16 +1502,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel62.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel62.setText("Y");
 
+        Y_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Y_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        Y_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Y_Frequency.setText("Y");
+
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
         jPanel24Layout.setHorizontalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Y_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(Y_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Y_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel24Layout.setVerticalGroup(
             jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1274,7 +1526,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel62)
-                    .addComponent(Y_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Y_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Y_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -1295,16 +1548,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel63.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel63.setText("X");
 
+        X_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        X_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        X_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        X_Frequency.setText("X");
+
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
         jPanel25Layout.setHorizontalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(X_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(X_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(X_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1312,7 +1572,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel63)
-                    .addComponent(X_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(X_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(X_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -1333,16 +1594,23 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel64.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel64.setText("Z");
 
+        Z_Frequency.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Z_Frequency.setForeground(new java.awt.Color(255, 255, 255));
+        Z_Frequency.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Z_Frequency.setText("Z");
+
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
         jPanel26Layout.setHorizontalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel26Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Z_Combo, 0, 1, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(Z_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Z_Frequency, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1350,7 +1618,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel64)
-                    .addComponent(Z_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Z_Combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Z_Frequency))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
@@ -1361,12 +1630,6 @@ public class cryptanalystGui extends javax.swing.JFrame {
             .addGroup(LetterMappingPanelMZLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(LetterMappingPanelMZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LetterMappingPanelMZLayout.createSequentialGroup()
-                        .addGroup(LetterMappingPanelMZLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 125, Short.MAX_VALUE)
-                            .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1376,7 +1639,10 @@ public class cryptanalystGui extends javax.swing.JFrame {
                     .addComponent(jPanel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
         LetterMappingPanelMZLayout.setVerticalGroup(
@@ -1487,20 +1753,22 @@ public class cryptanalystGui extends javax.swing.JFrame {
                     .addComponent(CiphertextScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CalibrateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(BackgroundLayout.createSequentialGroup()
+                        .addComponent(CalibrateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(BackgroundLayout.createSequentialGroup()
                                 .addComponent(LetterMappingPanelAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LetterMappingPanelMZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LetterMappingPanelMZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Separator1)
                             .addComponent(PlaintextLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(PlaintextScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(PlaintextScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36))))
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1529,7 +1797,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(LetterMappingPanelAM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LetterMappingPanelMZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LetterMappingPanelMZ, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1541,11 +1809,13 @@ public class cryptanalystGui extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 1330, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 1474, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, 1500, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 894, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -1567,6 +1837,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
             //cipher.initialMap();
             this.map = cipher.getCipherTextMapping();
             this.setMappings();
+            this.setFrequencies();
         }
     }//GEN-LAST:event_CalibrateButtonMouseClicked
 
@@ -1650,6 +1921,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
             PlaintextTextArea.setText(cipher.Decode());
             this.map = cipher.getCipherTextMapping();
             this.setMappings();
+            this.setFrequencies();
         }
     }//GEN-LAST:event_CiphertextTextAreaKeyReleased
 
@@ -1722,56 +1994,84 @@ public class cryptanalystGui extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> A_Combo;
+    private javax.swing.JLabel A_Frequency;
     private javax.swing.JComboBox<String> B_Combo;
+    private javax.swing.JLabel B_Frequency;
     private javax.swing.JPanel Background;
     private javax.swing.JComboBox<String> C_Combo;
+    private javax.swing.JLabel C_Frequency;
     private javax.swing.JPanel CalibrateButton;
     private javax.swing.JLabel CiphertextLabel;
     private javax.swing.JScrollPane CiphertextScrollPane;
     private javax.swing.JTextArea CiphertextTextArea;
     private javax.swing.JComboBox<String> D_Combo;
+    private javax.swing.JLabel D_Frequency;
     private javax.swing.JComboBox<String> E_Combo;
+    private javax.swing.JLabel E_Frequency;
     private javax.swing.JComboBox<String> F_Combo;
+    private javax.swing.JLabel F_Frequency;
     private javax.swing.JComboBox<String> G_Combo;
+    private javax.swing.JLabel G_Frequency;
     private javax.swing.JComboBox<String> H_Combo;
+    private javax.swing.JLabel H_Frequency;
     private javax.swing.JComboBox<String> I_Combo;
+    private javax.swing.JLabel I_Frequency;
     private javax.swing.JComboBox<String> J_Combo;
+    private javax.swing.JLabel J_Frequency;
     private javax.swing.JComboBox<String> K_Combo;
+    private javax.swing.JLabel K_Frequency;
     private javax.swing.JComboBox<String> L_Combo;
+    private javax.swing.JLabel L_Frequency;
     private javax.swing.JPanel LetterMappingPanelAM;
     private javax.swing.JPanel LetterMappingPanelMZ;
     private javax.swing.JComboBox<String> M_Combo;
+    private javax.swing.JLabel M_Frequency;
     private javax.swing.JComboBox<String> N_Combo;
+    private javax.swing.JLabel N_Frequency;
     private javax.swing.JComboBox<String> O_Combo;
+    private javax.swing.JLabel O_Frequency;
+    private javax.swing.JLabel O_Label;
     private javax.swing.JComboBox<String> P_Combo;
+    private javax.swing.JLabel P_Frequency;
     private javax.swing.JLabel PlaintextLabel;
     private javax.swing.JScrollPane PlaintextScrollPane;
     private javax.swing.JTextArea PlaintextTextArea;
     private javax.swing.JComboBox<String> Q_Combo;
+    private javax.swing.JLabel Q_Frequency;
     private javax.swing.JComboBox<String> R_Combo;
+    private javax.swing.JLabel R_Frequency;
     private javax.swing.JComboBox<String> S_Combo;
+    private javax.swing.JLabel S_Frequency;
+    private javax.swing.JLabel S_Label;
     private javax.swing.JSeparator Separator;
     private javax.swing.JSeparator Separator1;
     private javax.swing.JComboBox<String> T_Combo;
+    private javax.swing.JLabel T_Frequency;
+    private javax.swing.JLabel T_Label;
     private javax.swing.JPanel TitleBar;
     private javax.swing.JComboBox<String> U_Combo;
+    private javax.swing.JLabel U_Frequency;
+    private javax.swing.JLabel U_Label;
     private javax.swing.JPanel UpdateButton;
     private javax.swing.JComboBox<String> V_Combo;
+    private javax.swing.JLabel V_Frequency;
     private javax.swing.JComboBox<String> W_Combo;
+    private javax.swing.JLabel W_Frequency;
     private javax.swing.JComboBox<String> X_Combo;
+    private javax.swing.JLabel X_Frequency;
     private javax.swing.JComboBox<String> Y_Combo;
+    private javax.swing.JLabel Y_Frequency;
     private javax.swing.JComboBox<String> Z_Combo;
+    private javax.swing.JLabel Z_Frequency;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
@@ -1784,14 +2084,12 @@ public class cryptanalystGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
