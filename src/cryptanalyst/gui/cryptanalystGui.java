@@ -32,32 +32,33 @@ public class cryptanalystGui extends javax.swing.JFrame {
     }
     
     public void setMappings() {
-        A_Combo.setSelectedItem(String.valueOf(this.map[0]));
-        B_Combo.setSelectedItem(String.valueOf(this.map[1]));
-        C_Combo.setSelectedItem(String.valueOf(this.map[2]));
-        D_Combo.setSelectedItem(String.valueOf(this.map[3]));
-        E_Combo.setSelectedItem(String.valueOf(this.map[4]));
-        F_Combo.setSelectedItem(String.valueOf(this.map[5]));
-        G_Combo.setSelectedItem(String.valueOf(this.map[6]));
-        H_Combo.setSelectedItem(String.valueOf(this.map[7]));
-        I_Combo.setSelectedItem(String.valueOf(this.map[8]));
-        J_Combo.setSelectedItem(String.valueOf(this.map[9]));
-        K_Combo.setSelectedItem(String.valueOf(this.map[10]));
-        L_Combo.setSelectedItem(String.valueOf(this.map[11]));
-        M_Combo.setSelectedItem(String.valueOf(this.map[12]));
-        N_Combo.setSelectedItem(String.valueOf(this.map[13]));
-        O_Combo.setSelectedItem(String.valueOf(this.map[14]));
-        P_Combo.setSelectedItem(String.valueOf(this.map[15]));
-        Q_Combo.setSelectedItem(String.valueOf(this.map[16]));
-        R_Combo.setSelectedItem(String.valueOf(this.map[17]));
-        S_Combo.setSelectedItem(String.valueOf(this.map[18]));
-        T_Combo.setSelectedItem(String.valueOf(this.map[19]));
-        U_Combo.setSelectedItem(String.valueOf(this.map[20]));
-        V_Combo.setSelectedItem(String.valueOf(this.map[21]));
-        W_Combo.setSelectedItem(String.valueOf(this.map[22]));
-        X_Combo.setSelectedItem(String.valueOf(this.map[23]));
-        Y_Combo.setSelectedItem(String.valueOf(this.map[24]));
-        Z_Combo.setSelectedItem(String.valueOf(this.map[25]));
+        final char[] tmp = this.map.clone();
+        A_Combo.setSelectedItem((Object)String.valueOf(tmp[0]));
+        B_Combo.setSelectedItem((Object)String.valueOf(tmp[1]));
+        C_Combo.setSelectedItem((Object)String.valueOf(tmp[2]));
+        D_Combo.setSelectedItem((Object)String.valueOf(tmp[3]));
+        E_Combo.setSelectedItem((Object)String.valueOf(tmp[4]));
+        F_Combo.setSelectedItem((Object)String.valueOf(tmp[5]));
+        G_Combo.setSelectedItem((Object)String.valueOf(tmp[6]));
+        H_Combo.setSelectedItem((Object)String.valueOf(tmp[7]));
+        I_Combo.setSelectedItem((Object)String.valueOf(tmp[8]));
+        J_Combo.setSelectedItem((Object)String.valueOf(tmp[9]));
+        K_Combo.setSelectedItem((Object)String.valueOf(tmp[10]));
+        L_Combo.setSelectedItem((Object)String.valueOf(tmp[11]));
+        M_Combo.setSelectedItem((Object)String.valueOf(tmp[12]));
+        N_Combo.setSelectedItem((Object)String.valueOf(tmp[13]));
+        O_Combo.setSelectedItem((Object)String.valueOf(tmp[14]));
+        P_Combo.setSelectedItem((Object)String.valueOf(tmp[15]));
+        Q_Combo.setSelectedItem((Object)String.valueOf(tmp[16]));
+        R_Combo.setSelectedItem((Object)String.valueOf(tmp[17]));
+        S_Combo.setSelectedItem((Object)String.valueOf(tmp[18]));
+        T_Combo.setSelectedItem((Object)String.valueOf(tmp[19]));
+        U_Combo.setSelectedItem((Object)String.valueOf(tmp[20]));
+        V_Combo.setSelectedItem((Object)String.valueOf(tmp[21]));
+        W_Combo.setSelectedItem((Object)String.valueOf(tmp[22]));
+        X_Combo.setSelectedItem((Object)String.valueOf(tmp[23]));
+        Y_Combo.setSelectedItem((Object)String.valueOf(tmp[24]));
+        Z_Combo.setSelectedItem((Object)String.valueOf(tmp[25]));
     }
 
     /**
@@ -1467,7 +1468,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
         if (!ciphertext.isEmpty()) {
             cipher.setCalibratedFrequency(ciphertext);
             //cipher.initialMap();
-            this.map = cipher.getCipherTextMapping();
+            this.map = cipher.getPlainTextMapping();
             this.setMappings();
         }
     }//GEN-LAST:event_CalibrateButtonMouseClicked
