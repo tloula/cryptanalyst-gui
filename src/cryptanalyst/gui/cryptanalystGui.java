@@ -1468,7 +1468,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
         if (!ciphertext.isEmpty()) {
             cipher.setCalibratedFrequency(ciphertext);
             //cipher.initialMap();
-            this.map = cipher.getPlainTextMapping();
+            this.map = cipher.getCipherTextMapping();
             this.setMappings();
         }
     }//GEN-LAST:event_CalibrateButtonMouseClicked
@@ -1597,7 +1597,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
         if (!ciphertext.isEmpty()) {
             cipher.setCipherText(ciphertext);
             PlaintextTextArea.setText(cipher.Decode());
-            this.map = cipher.getPlainTextMapping();
+            this.map = cipher.getCipherTextMapping();
             this.setMappings();
         }
     }//GEN-LAST:event_CiphertextTextAreaKeyReleased
