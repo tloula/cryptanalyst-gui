@@ -104,32 +104,32 @@ public class cryptanalystGui extends javax.swing.JFrame {
         int[] ciph = cipher.getCiphertextFrequency();
         int[] cali = cipher.getCalibratedFrequency();
         
-        A_Frequency.setText(Integer.toString(ciph[0]) + "/" + Integer.toString(cali[0]));
-        B_Frequency.setText(Integer.toString(ciph[1]) + "/" + Integer.toString(cali[1]));
-        C_Frequency.setText(Integer.toString(ciph[2]) + "/" + Integer.toString(cali[2]));
-        D_Frequency.setText(Integer.toString(ciph[3]) + "/" + Integer.toString(cali[3]));
-        E_Frequency.setText(Integer.toString(ciph[4]) + "/" + Integer.toString(cali[4]));
-        F_Frequency.setText(Integer.toString(ciph[5]) + "/" + Integer.toString(cali[5]));
-        G_Frequency.setText(Integer.toString(ciph[6]) + "/" + Integer.toString(cali[6]));
-        H_Frequency.setText(Integer.toString(ciph[7]) + "/" + Integer.toString(cali[7]));
-        I_Frequency.setText(Integer.toString(ciph[8]) + "/" + Integer.toString(cali[8]));
-        J_Frequency.setText(Integer.toString(ciph[9]) + "/" + Integer.toString(cali[9]));
-        K_Frequency.setText(Integer.toString(ciph[10]) + "/" + Integer.toString(cali[10]));
-        L_Frequency.setText(Integer.toString(ciph[11]) + "/" + Integer.toString(cali[11]));
-        M_Frequency.setText(Integer.toString(ciph[12]) + "/" + Integer.toString(cali[12]));
-        N_Frequency.setText(Integer.toString(ciph[13]) + "/" + Integer.toString(cali[13]));
-        O_Frequency.setText(Integer.toString(ciph[14]) + "/" + Integer.toString(cali[14]));
-        P_Frequency.setText(Integer.toString(ciph[15]) + "/" + Integer.toString(cali[15]));
-        Q_Frequency.setText(Integer.toString(ciph[16]) + "/" + Integer.toString(cali[16]));
-        R_Frequency.setText(Integer.toString(ciph[17]) + "/" + Integer.toString(cali[17]));
-        S_Frequency.setText(Integer.toString(ciph[18]) + "/" + Integer.toString(cali[18]));
-        T_Frequency.setText(Integer.toString(ciph[19]) + "/" + Integer.toString(cali[19]));
-        U_Frequency.setText(Integer.toString(ciph[20]) + "/" + Integer.toString(cali[20]));
-        V_Frequency.setText(Integer.toString(ciph[21]) + "/" + Integer.toString(cali[21]));
-        W_Frequency.setText(Integer.toString(ciph[22]) + "/" + Integer.toString(cali[22]));
-        X_Frequency.setText(Integer.toString(ciph[23]) + "/" + Integer.toString(cali[23]));
-        Y_Frequency.setText(Integer.toString(ciph[24]) + "/" + Integer.toString(cali[24]));
-        Z_Frequency.setText(Integer.toString(ciph[25]) + "/" + Integer.toString(cali[25]));
+        A_Frequency.setText(Integer.toString(ciph[0]) + "/" + Integer.toString(cali[A_Combo.getSelectedIndex()]));
+        B_Frequency.setText(Integer.toString(ciph[1]) + "/" + Integer.toString(cali[B_Combo.getSelectedIndex()]));
+        C_Frequency.setText(Integer.toString(ciph[2]) + "/" + Integer.toString(cali[C_Combo.getSelectedIndex()]));
+        D_Frequency.setText(Integer.toString(ciph[3]) + "/" + Integer.toString(cali[D_Combo.getSelectedIndex()]));
+        E_Frequency.setText(Integer.toString(ciph[4]) + "/" + Integer.toString(cali[E_Combo.getSelectedIndex()]));
+        F_Frequency.setText(Integer.toString(ciph[5]) + "/" + Integer.toString(cali[F_Combo.getSelectedIndex()]));
+        G_Frequency.setText(Integer.toString(ciph[6]) + "/" + Integer.toString(cali[G_Combo.getSelectedIndex()]));
+        H_Frequency.setText(Integer.toString(ciph[7]) + "/" + Integer.toString(cali[H_Combo.getSelectedIndex()]));
+        I_Frequency.setText(Integer.toString(ciph[8]) + "/" + Integer.toString(cali[I_Combo.getSelectedIndex()]));
+        J_Frequency.setText(Integer.toString(ciph[9]) + "/" + Integer.toString(cali[J_Combo.getSelectedIndex()]));
+        K_Frequency.setText(Integer.toString(ciph[10]) + "/" + Integer.toString(cali[K_Combo.getSelectedIndex()]));
+        L_Frequency.setText(Integer.toString(ciph[11]) + "/" + Integer.toString(cali[L_Combo.getSelectedIndex()]));
+        M_Frequency.setText(Integer.toString(ciph[12]) + "/" + Integer.toString(cali[M_Combo.getSelectedIndex()]));
+        N_Frequency.setText(Integer.toString(ciph[13]) + "/" + Integer.toString(cali[N_Combo.getSelectedIndex()]));
+        O_Frequency.setText(Integer.toString(ciph[14]) + "/" + Integer.toString(cali[O_Combo.getSelectedIndex()]));
+        P_Frequency.setText(Integer.toString(ciph[15]) + "/" + Integer.toString(cali[P_Combo.getSelectedIndex()]));
+        Q_Frequency.setText(Integer.toString(ciph[16]) + "/" + Integer.toString(cali[Q_Combo.getSelectedIndex()]));
+        R_Frequency.setText(Integer.toString(ciph[17]) + "/" + Integer.toString(cali[R_Combo.getSelectedIndex()]));
+        S_Frequency.setText(Integer.toString(ciph[18]) + "/" + Integer.toString(cali[S_Combo.getSelectedIndex()]));
+        T_Frequency.setText(Integer.toString(ciph[19]) + "/" + Integer.toString(cali[T_Combo.getSelectedIndex()]));
+        U_Frequency.setText(Integer.toString(ciph[20]) + "/" + Integer.toString(cali[U_Combo.getSelectedIndex()]));
+        V_Frequency.setText(Integer.toString(ciph[21]) + "/" + Integer.toString(cali[V_Combo.getSelectedIndex()]));
+        W_Frequency.setText(Integer.toString(ciph[22]) + "/" + Integer.toString(cali[W_Combo.getSelectedIndex()]));
+        X_Frequency.setText(Integer.toString(ciph[23]) + "/" + Integer.toString(cali[X_Combo.getSelectedIndex()]));
+        Y_Frequency.setText(Integer.toString(ciph[24]) + "/" + Integer.toString(cali[Y_Combo.getSelectedIndex()]));
+        Z_Frequency.setText(Integer.toString(ciph[25]) + "/" + Integer.toString(cali[Z_Combo.getSelectedIndex()]));
     }
 
     /**
@@ -266,7 +266,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1330, 900));
+        setPreferredSize(new java.awt.Dimension(1450, 950));
 
         Background.setBackground(new java.awt.Color(39, 39, 39));
         Background.setMinimumSize(new java.awt.Dimension(1500, 1500));
@@ -333,10 +333,10 @@ public class cryptanalystGui extends javax.swing.JFrame {
             CalibrateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CalibrateButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGap(145, 145, 145))
         );
         CalibrateButtonLayout.setVerticalGroup(
             CalibrateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -344,11 +344,11 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(CalibrateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        LetterMappingPanelAM.setBackground(new java.awt.Color(123, 70, 70));
+        LetterMappingPanelAM.setBackground(new java.awt.Color(39, 39, 39));
 
         jPanel1.setBackground(new java.awt.Color(34, 38, 41));
 
@@ -1015,10 +1015,10 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        LetterMappingPanelMZ.setBackground(new java.awt.Color(123, 70, 70));
+        LetterMappingPanelMZ.setBackground(new java.awt.Color(39, 39, 39));
 
         jPanel14.setBackground(new java.awt.Color(34, 38, 41));
 
@@ -1725,10 +1725,10 @@ public class cryptanalystGui extends javax.swing.JFrame {
             UpdateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateButtonLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGap(142, 142, 142))
         );
         UpdateButtonLayout.setVerticalGroup(
             UpdateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1754,28 +1754,25 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addComponent(CalibrateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(BackgroundLayout.createSequentialGroup()
-                                .addComponent(LetterMappingPanelAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LetterMappingPanelMZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Separator1)
-                            .addComponent(PlaintextLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(PlaintextScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(36, 36, 36))))
+                        .addComponent(LetterMappingPanelAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LetterMappingPanelMZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(CalibrateButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(UpdateButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(16, 16, 16)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Separator1)
+                    .addComponent(PlaintextLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PlaintextScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(TitleBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1795,9 +1792,9 @@ public class cryptanalystGui extends javax.swing.JFrame {
                                 .addGap(14, 14, 14)
                                 .addComponent(CiphertextScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 686, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(LetterMappingPanelAM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LetterMappingPanelMZ, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LetterMappingPanelAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LetterMappingPanelMZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1809,13 +1806,11 @@ public class cryptanalystGui extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 1474, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 1451, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 894, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
