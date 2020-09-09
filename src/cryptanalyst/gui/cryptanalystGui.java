@@ -28,23 +28,13 @@ public class cryptanalystGui extends javax.swing.JFrame {
     
     public void update() {
         cipher.setPlaintextMapping(this.map);
-        //cipher.initialMap();
         cipher.Decode();
     }
     
     public void setMappings() {
-        //String a = String.valueOf(this.map[0]);
-        //A_Combo.setSelectedItem(a);
-        
-        int tmp = this.map[0] - 'A';
-        A_Combo.setSelectedIndex(tmp);
-
-        String b = String.valueOf(this.map[1]);
-        B_Combo.setSelectedItem(b);
-
-        String c = String.valueOf(this.map[2]);
-        C_Combo.setSelectedItem(c);
-
+        A_Combo.setSelectedItem(String.valueOf(this.map[0]));
+        B_Combo.setSelectedItem(String.valueOf(this.map[1]));
+        C_Combo.setSelectedItem(String.valueOf(this.map[2]));
         D_Combo.setSelectedItem(String.valueOf(this.map[3]));
         E_Combo.setSelectedItem(String.valueOf(this.map[4]));
         F_Combo.setSelectedItem(String.valueOf(this.map[5]));
@@ -1476,7 +1466,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
         String ciphertext = CiphertextTextArea.getText();
         if (!ciphertext.isEmpty()) {
             cipher.setCalibratedFrequency(ciphertext);
-            cipher.initialMap();
+            //cipher.initialMap();
             this.map = cipher.getCipherTextMapping();
             this.setMappings();
         }
@@ -1606,6 +1596,8 @@ public class cryptanalystGui extends javax.swing.JFrame {
         if (!ciphertext.isEmpty()) {
             cipher.setCipherText(ciphertext);
             PlaintextTextArea.setText(cipher.Decode());
+            this.map = cipher.getPlainTextMapping();
+            this.setMappings();
         }
     }//GEN-LAST:event_CiphertextTextAreaKeyReleased
 
