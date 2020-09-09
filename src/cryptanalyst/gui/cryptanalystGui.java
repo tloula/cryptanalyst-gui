@@ -27,7 +27,9 @@ public class cryptanalystGui extends javax.swing.JFrame {
     }
     
     public void update() {
-        cipher.setPlaintextMapping(this.map);
+        cipher.setPlaintextMapping(getMappings());
+        System.out.println(cipher.getPlainTextMapping());
+        System.out.println(cipher.Decode());
         PlaintextTextArea.setText(cipher.Decode());
     }
     
@@ -59,6 +61,36 @@ public class cryptanalystGui extends javax.swing.JFrame {
         X_Combo.setSelectedItem((Object)String.valueOf(tmp[23]));
         Y_Combo.setSelectedItem((Object)String.valueOf(tmp[24]));
         Z_Combo.setSelectedItem((Object)String.valueOf(tmp[25]));
+    }
+    public char[] getMappings() {
+        char[] temp = {};
+        temp[0] = A_Combo.getSelectedItem().toString().charAt(0);
+        temp[1] = B_Combo.getSelectedItem().toString().charAt(0);
+        temp[2] = C_Combo.getSelectedItem().toString().charAt(0);
+        temp[3] = D_Combo.getSelectedItem().toString().charAt(0);
+        temp[4] = E_Combo.getSelectedItem().toString().charAt(0);
+        temp[5] = F_Combo.getSelectedItem().toString().charAt(0);
+        temp[6] = G_Combo.getSelectedItem().toString().charAt(0);
+        temp[7] = H_Combo.getSelectedItem().toString().charAt(0);
+        temp[8] = I_Combo.getSelectedItem().toString().charAt(0);
+        temp[9] = J_Combo.getSelectedItem().toString().charAt(0);
+        temp[10] = K_Combo.getSelectedItem().toString().charAt(0);
+        temp[11] = L_Combo.getSelectedItem().toString().charAt(0);
+        temp[12] = M_Combo.getSelectedItem().toString().charAt(0);
+        temp[13] = N_Combo.getSelectedItem().toString().charAt(0);
+        temp[14] = O_Combo.getSelectedItem().toString().charAt(0);
+        temp[15] = P_Combo.getSelectedItem().toString().charAt(0);
+        temp[16] = Q_Combo.getSelectedItem().toString().charAt(0);
+        temp[17] = R_Combo.getSelectedItem().toString().charAt(0);
+        temp[18] = S_Combo.getSelectedItem().toString().charAt(0);
+        temp[19] = T_Combo.getSelectedItem().toString().charAt(0);
+        temp[20] = U_Combo.getSelectedItem().toString().charAt(0);
+        temp[21] = V_Combo.getSelectedItem().toString().charAt(0);
+        temp[22] = W_Combo.getSelectedItem().toString().charAt(0);
+        temp[23] = X_Combo.getSelectedItem().toString().charAt(0);
+        temp[24] = Y_Combo.getSelectedItem().toString().charAt(0);
+        temp[25] = Z_Combo.getSelectedItem().toString().charAt(0);
+        return temp;
     }
 
     /**

@@ -92,7 +92,7 @@ public class Monoalphabetic {
     public String Decode() {
         String plaintext = "";
         String ciphertext = this.cipherText.toUpperCase();
-        for (int i = 0;  i < this.cipherText.length(); i++) {
+        for (int i = 0;  i < ciphertext.length(); i++) {
             char currChar = ciphertext.charAt(i);
             int charVal = currChar - 0x41;
             if (charVal >= 0 && charVal < 26) {
