@@ -50,6 +50,12 @@ public class Monoalphabetic {
         this.cipherTextMapping = convertMap(map);
     }
     
+    public void setCiphertextMapping(char[] map) {
+        //
+        this.cipherTextMapping = map;
+        this.plainTextMapping = convertMap(map);
+    }
+    
     public char[] getCipherTextMapping() {
         //This is a mapping of the cipher text to plain text ->
         // Cipher A = Plain M
@@ -71,7 +77,7 @@ public class Monoalphabetic {
         //converts a map of plain -> cipher to a cipher -> plain map and inverse
         //this is accomplished using a mirrored sort
         char[] newMap = new char[] {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-        
+        initMap = initMap.clone();
         //sort initMap from least to greatest, mirroring moves
         //used insertion sort
         for (int i = 0; i < initMap.length; i++) {

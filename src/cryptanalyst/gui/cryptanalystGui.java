@@ -32,8 +32,9 @@ public class cryptanalystGui extends javax.swing.JFrame {
     }
     
     public void update() {
-        cipher.setPlaintextMapping(getMappings());
-        System.out.println(cipher.getPlainTextMapping());
+        System.out.println(getMappings());
+        cipher.setCiphertextMapping(getMappings());
+        System.out.println(cipher.getCipherTextMapping());
         System.out.println(cipher.Decode());
         PlaintextTextArea.setText(cipher.Decode());
     }
@@ -68,7 +69,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
         Z_Combo.setSelectedItem((Object)String.valueOf(tmp[25]));
     }
     public char[] getMappings() {
-        char[] temp = {};
+        char[] temp = new char[26];
         temp[0] = A_Combo.getSelectedItem().toString().charAt(0);
         temp[1] = B_Combo.getSelectedItem().toString().charAt(0);
         temp[2] = C_Combo.getSelectedItem().toString().charAt(0);
@@ -1544,7 +1545,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 900, Short.MAX_VALUE)
+            .addComponent(Background, javax.swing.GroupLayout.DEFAULT_SIZE, 1500, Short.MAX_VALUE)
         );
 
         pack();
