@@ -5,6 +5,8 @@
  */
 package cryptanalyst.gui;
 
+import java.awt.Color;
+
 /**
  *
  * @author Trevor Loula
@@ -13,6 +15,9 @@ public class cryptanalystGui extends javax.swing.JFrame {
     
     Monoalphabetic cipher;
     char[] map;
+    
+    Color Hover = new Color(61,0,0);
+    Color MediumRed = new Color(108,42,42);
 
     /**
      * Creates new form cryptanalystGui
@@ -196,9 +201,12 @@ public class cryptanalystGui extends javax.swing.JFrame {
         PlaintextTextArea = new javax.swing.JTextArea();
         CiphertextScrollPane = new javax.swing.JScrollPane();
         CiphertextTextArea = new javax.swing.JTextArea();
+        UpdateButton = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1330, 850));
+        setPreferredSize(new java.awt.Dimension(1330, 900));
 
         Background.setBackground(new java.awt.Color(39, 39, 39));
         Background.setMinimumSize(new java.awt.Dimension(1500, 1500));
@@ -245,11 +253,17 @@ public class cryptanalystGui extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CalibrateButtonMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                CalibrateButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                CalibrateButtonMouseExited(evt);
+            }
         });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel2.setText("Calibrate");
+        jLabel2.setText("Calibrate Mappings");
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cryptanalyst/gui/img/Settings_32px.png"))); // NOI18N
 
@@ -1418,10 +1432,52 @@ public class cryptanalystGui extends javax.swing.JFrame {
         });
         CiphertextScrollPane.setViewportView(CiphertextTextArea);
 
+        UpdateButton.setBackground(new java.awt.Color(108, 42, 42));
+        UpdateButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        UpdateButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UpdateButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                UpdateButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                UpdateButtonMouseExited(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setText("Update Mappings");
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cryptanalyst/gui/img/Restart_32px.png"))); // NOI18N
+
+        javax.swing.GroupLayout UpdateButtonLayout = new javax.swing.GroupLayout(UpdateButton);
+        UpdateButton.setLayout(UpdateButtonLayout);
+        UpdateButtonLayout.setHorizontalGroup(
+            UpdateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UpdateButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
+        );
+        UpdateButtonLayout.setVerticalGroup(
+            UpdateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UpdateButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(UpdateButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
         Background.setLayout(BackgroundLayout);
         BackgroundLayout.setHorizontalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(TitleBar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(BackgroundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -1430,18 +1486,20 @@ public class cryptanalystGui extends javax.swing.JFrame {
                     .addComponent(CiphertextScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CalibrateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(BackgroundLayout.createSequentialGroup()
-                        .addComponent(LetterMappingPanelAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(BackgroundLayout.createSequentialGroup()
+                                .addComponent(LetterMappingPanelAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LetterMappingPanelMZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LetterMappingPanelMZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(CalibrateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Separator1)
-                    .addComponent(PlaintextLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PlaintextScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE))
+                        .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Separator1)
+                            .addComponent(PlaintextLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PlaintextScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(TitleBar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         BackgroundLayout.setVerticalGroup(
             BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1449,7 +1507,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(TitleBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(BackgroundLayout.createSequentialGroup()
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(BackgroundLayout.createSequentialGroup()
@@ -1471,8 +1529,10 @@ public class cryptanalystGui extends javax.swing.JFrame {
                         .addGroup(BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(LetterMappingPanelAM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(LetterMappingPanelMZ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CalibrateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CalibrateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1484,26 +1544,19 @@ public class cryptanalystGui extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 834, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, 900, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void C_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C_ComboActionPerformed
-        map[2] = C_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_C_ComboActionPerformed
 
     private void B_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ComboActionPerformed
-        map[1] = B_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_B_ComboActionPerformed
 
     private void A_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_A_ComboActionPerformed
-        char tmp = A_Combo.getSelectedItem().toString().charAt(0);
-        map[0] = tmp;
-        this.update();
     }//GEN-LAST:event_A_ComboActionPerformed
 
     private void CalibrateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalibrateButtonMouseClicked
@@ -1517,118 +1570,72 @@ public class cryptanalystGui extends javax.swing.JFrame {
     }//GEN-LAST:event_CalibrateButtonMouseClicked
 
     private void D_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D_ComboActionPerformed
-        map[3] = D_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_D_ComboActionPerformed
 
     private void E_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_E_ComboActionPerformed
-        map[4] = E_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_E_ComboActionPerformed
 
     private void F_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F_ComboActionPerformed
-        map[5] = F_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_F_ComboActionPerformed
 
     private void G_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_G_ComboActionPerformed
-        map[6] = G_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_G_ComboActionPerformed
 
     private void H_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_H_ComboActionPerformed
-        map[7] = H_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_H_ComboActionPerformed
 
     private void I_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_I_ComboActionPerformed
-        map[8] = I_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_I_ComboActionPerformed
 
     private void J_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_J_ComboActionPerformed
-        map[9] = J_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_J_ComboActionPerformed
 
     private void L_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_L_ComboActionPerformed
-        map[10] = K_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_L_ComboActionPerformed
 
     private void K_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_K_ComboActionPerformed
-        map[11] = K_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_K_ComboActionPerformed
 
     private void M_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_M_ComboActionPerformed
-        map[12] = M_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_M_ComboActionPerformed
 
     private void N_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_N_ComboActionPerformed
-        map[13] = N_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_N_ComboActionPerformed
 
     private void O_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_O_ComboActionPerformed
-        map[14] = O_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_O_ComboActionPerformed
 
     private void P_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_P_ComboActionPerformed
-        map[15] = P_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_P_ComboActionPerformed
 
     private void Q_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Q_ComboActionPerformed
-        map[16] = Q_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_Q_ComboActionPerformed
 
     private void R_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_R_ComboActionPerformed
-        map[17] = R_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_R_ComboActionPerformed
 
     private void S_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_S_ComboActionPerformed
-       map[18] = S_Combo.getSelectedItem().toString().charAt(0);
-       this.update();
     }//GEN-LAST:event_S_ComboActionPerformed
 
     private void T_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T_ComboActionPerformed
-        map[19] = T_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_T_ComboActionPerformed
 
     private void U_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_U_ComboActionPerformed
-        map[20] = U_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_U_ComboActionPerformed
 
     private void V_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_V_ComboActionPerformed
-        map[21] = V_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_V_ComboActionPerformed
 
     private void W_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_W_ComboActionPerformed
-        map[22] = W_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_W_ComboActionPerformed
 
     private void Y_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Y_ComboActionPerformed
-        map[23] = X_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_Y_ComboActionPerformed
 
     private void X_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_X_ComboActionPerformed
-        map[24] = X_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_X_ComboActionPerformed
 
     private void Z_ComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Z_ComboActionPerformed
-        map[25] = Z_Combo.getSelectedItem().toString().charAt(0);
-        this.update();
     }//GEN-LAST:event_Z_ComboActionPerformed
 
     private void CiphertextTextAreaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_CiphertextTextAreaKeyTyped
@@ -1656,6 +1663,26 @@ public class cryptanalystGui extends javax.swing.JFrame {
     private void A_ComboMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_A_ComboMouseExited
 
     }//GEN-LAST:event_A_ComboMouseExited
+
+    private void CalibrateButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalibrateButtonMouseEntered
+        CalibrateButton.setBackground(Hover);
+    }//GEN-LAST:event_CalibrateButtonMouseEntered
+
+    private void CalibrateButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CalibrateButtonMouseExited
+        CalibrateButton.setBackground(MediumRed);
+    }//GEN-LAST:event_CalibrateButtonMouseExited
+
+    private void UpdateButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateButtonMouseClicked
+        this.update();
+    }//GEN-LAST:event_UpdateButtonMouseClicked
+
+    private void UpdateButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateButtonMouseEntered
+        UpdateButton.setBackground(Hover);
+    }//GEN-LAST:event_UpdateButtonMouseEntered
+
+    private void UpdateButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateButtonMouseExited
+        UpdateButton.setBackground(MediumRed);
+    }//GEN-LAST:event_UpdateButtonMouseExited
 
     /**
      * @param args the command line arguments
@@ -1727,6 +1754,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> T_Combo;
     private javax.swing.JPanel TitleBar;
     private javax.swing.JComboBox<String> U_Combo;
+    private javax.swing.JPanel UpdateButton;
     private javax.swing.JComboBox<String> V_Combo;
     private javax.swing.JComboBox<String> W_Combo;
     private javax.swing.JComboBox<String> X_Combo;
@@ -1739,6 +1767,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
@@ -1746,6 +1775,7 @@ public class cryptanalystGui extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
